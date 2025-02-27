@@ -24,7 +24,7 @@ session_start(); // Начать сессию
         <button id="toggle-button" class="toggle-button" onclick="dialogButton()">
             <span>Инструменты</span>  
         </button>
-        <img id="strelkaImg" src="Image/strelka.svg" onclick="dialogButton()" alt="" width="30" height="30" style="cursor: pointer;">
+        <img id="strelkaImg" src="Image/strelka.svg" alt="" width="30" height="30" style="cursor: pointer;">
         <a href="#page3" class="base-button">База знаний</a>
         <div class="search-wrapper">
             <i class="fas fa-search search-icon"></i>
@@ -42,7 +42,21 @@ session_start(); // Начать сессию
             <?php endif; ?>
         </div>
     </header>
-
+    <div id="menu-container" class="menu-container" style="display: none;">
+        <nav>
+            <ul>
+                <p class="menu-text">Занятия</p>
+                <li><a href="#">Карточки</a></li>
+                <li><a href="#">Выбор слов</a></li>
+                <li><a href="#">Заучивание</a></li>
+                <li><a href="#">Тест</a></li>
+                <p class="menu-text">О нас</p>
+                <li><a href="https://t.me/drbshh">Telegram</a></li>
+                <li><a href="#">Vk</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </nav>
+    </div>
     <div class="container">
         <div class="page" id="page1">
             <div class="text-first-page">

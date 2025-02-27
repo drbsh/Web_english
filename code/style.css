@@ -125,13 +125,11 @@ h1 {
 .text1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 60px;
-    font-weight: bold;
-    font-style: italic;
+    font-weight: bold;  
 }
 .text2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 22px;
-    font-style: italic;
 }
 .indent-text2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
