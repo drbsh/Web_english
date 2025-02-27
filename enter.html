@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="code/style.css">
+    <script src="code.js" defer></script>
+</head>
+<body class="enter">
+    <div class="main-container">
+        <div class="icon-web-enter">
+        <img class="icon-enter" src="Image/image-Photoroom (2).png" onclick="backIconclick()"0>
+        <h1 class="enterText">Вход</h1>
+        <form action="server.php" method="post">
+            <input class="login-input" id="username" name="username" placeholder="Логин" required>
+            <input type="password" class="pass-input" id="password" name="password" placeholder="Пароль" required>
+            <button id="enterPageButton" type="submit" class="enterPageButton">Вход</button>
+            <button type="button" class="registerPageButton" onclick="createAccountButton()">Создать учетную запись</button>
+        </form>
+        <a class="forgotPass" href="forgotPass.html">Забыли пароль?</a>
+        <p class="agreePageEnter">Продолжая, вы соглашаетесь на обработку персональных данных,<br>
+             а также принимаете условия пользовательского соглашения</p>
+        </div>  
+    </div>
+</body>

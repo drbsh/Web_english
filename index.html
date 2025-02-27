@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример красивого сайта</title>
+    <link rel="stylesheet" type="text/css" href="code/style.css">
+    <script src="code.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="icon-web">
+            <a href="#page1">
+                <img class="icon1" src="Image/image-Photoroom (2).png">
+            </a>
+        </div>
+        <button id="toggle-button" class="toggle-button">
+            <span>Инструменты</span>  
+        </button>
+        <img id="strelkaImg" src="Image/strelka.svg" alt="" width="30" height="30" style="cursor: pointer;">
+        <a href="#page3" class="base-button">База знаний</a>
+        <div class="search-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input type="search" class="search-row" placeholder="Поиск">
+        </div>
+        <input type="button" class="search-button" value="Найти">
+        <div class="user-container">
+            <img class="icon-person" src="Image/icons8-пользователь-48.png">
+            <button class="enter-button" onclick="goToLoginPage()"> Вход </button>
+        </div>
+    </header>
+    <div id="menu-container" class="menu-container" style="display: none;">
+        <nav>
+            <ul>
+                <p class="menu-text">Занятия</p>
+                <li><a href="#">Карточки</a></li>
+                <li><a href="#">Выбор слов</a></li>
+                <li><a href="#">Заучивание</a></li>
+                <li><a href="#">Тест</a></li>
+                <p class="menu-text">О нас</p>
+                <li><a href="https://t.me/drbshh">Telegram</a></li>
+                <li><a href="#">Vk</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="page" id="page1">
+            <div class="text-first-page">
+                <p class="text1"> Найди для себя простой<br>
+                    способ изучения<br>
+                     английского языка</p>
+                     <p class="text2">
+                        <span class="checkmark"> ✓ </span> Создавай свои или уже готовые<br>
+                               <span class="indent-text2">карточки со словами на сайте.</span><br> 
+                               <br>
+                               <span class="checkmark"> ✓</span> Проходи тесты и подтверждай свой уровень. <br>
+                             <br>
+                             <span class="checkmark"> ✓ </span> Большая база слов и методов изучения.<br>
+                             <br>
+                             <span class="checkmark">✓</span> Занятия в группе с другими учениками.
+                      </p>
+             </div>
+            <div class="enBook">
+                <img class="enBook-img" src="Image/english_book.png">
+            </div>
+            <div class="buttonGoDiv">
+                <button class="buttonGo" onclick="toggleContent()"> Начать </button>
+            </div>
+        </div>
+        <div class="page" id="page2">
+            <h1 class="text-second-page"> Как вы собираетесь учить?</h1>
+           <div class="scroll-container" id="scrollContainer">
+                <div class="item1">
+                    <p class="examText">Тесты</p>
+                    <img class="examPng" src="Image/exam.png">
+                </div>
+                <div class="item2">
+                    <p class="cardText">Выбор слов</p>
+                    <img class="cardImg" src="Image/card.jpg">
+                </div>
+                <div class="item3">
+                    <p class="learnText">Заучивание</p>
+                    <img class="learnImg" src="Image/learn.png">
+                </div>
+                <div class="item4">
+                    <p class="cardText2">Карточки</p>
+                    <img class="cardImg2" src="Image/shark2.jpg">
+                </div>
+                
+            </div>
+        </div>
+        <div class="page" id="page3">
+            <div class="imgPage3">
+                <img class="speakEn-img" src="Image/DoUSpeakEn.png"> 
+            </div>
+            <div class="textPage3">
+                <h1 class="speakEn-text">Пройди тест и узнай<br>
+                     свой уровень<br>
+                      английского </h1>
+                      <p class="speakEn-text2">Сделай обучение увлекательным и эффективным!  <br>
+                        На нашем сайте ты можешь выполнять <br>
+                        разнообразные задания, которые помогут тебе<br>
+                        прокачать свои навыки и знания.<br>
+                        Каждый тест — это шаг к успеху, <br>
+                        который подтверждает твои достижения.<br> Не останавливайся на достигнутом: <br>
+                        повышай свой уровень с каждым днем. 
+                        <br>Твое стремление к знаниям откроют перед тобой <br>
+                         новые горизонты!</p>
+            </div>
+            <div class="testButton-container">
+            <button class="testButton" onclick="toggleContent()">Пройти тестирование!</button> 
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="footer-text" >&copy; 2025 BoostEnglish, Inc. Все права защищены.</p>
+    </footer>
+</body>
+</html>
