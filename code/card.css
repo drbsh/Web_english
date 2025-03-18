@@ -1,0 +1,362 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background: linear-gradient(to right,#390AF2, #8F02B6);
+    color: #ffffff;
+    height: 85px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    z-index: 100;
+}
+.theme-card-container{
+    display: flex;
+    align-items: center;
+    margin-left: 70px;
+}
+.theme-card{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    height: 60px;
+    font-size: 17px;
+    font-weight: 600;
+    width: 220px;
+    color: white;
+    background-color: #a584da;
+    cursor: pointer;
+}
+.strelkaImgCard{
+    padding-left: 10px;
+    height: 30px;
+}
+.level-card{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    height: 60px;
+    font-size: 17px;
+    font-weight: 600;
+    width: 220px;
+    color: white;
+    background-color: #a584da;
+    margin-left: 40px;
+    cursor: pointer;
+}
+.close-btn-container{
+    display: flex;
+    align-items: center;
+    margin-right: 65px;
+}
+.close-btn{
+    cursor: pointer; 
+    height: 43px; 
+}
+.container {
+    display: flex; /* Используем Flexbox для контейнера */
+    flex-wrap: wrap; /* Позволяем элементам переноситься на следующую строку */
+    justify-content: center; /* Выравниваем элементы по левому краю */
+    margin-top: 20px;
+}
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6{
+    margin-top: 20px;
+    margin-left: 40px;
+    width: 400px;
+    height: 230px;
+    background-color: #F4EEFF;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-right: 40px;
+    border-radius: 35px;
+    border: 2px solid black
+}
+.animal-card,
+.fruit-card,
+.veg-card,
+.food-card,
+.furn-card,
+.cloth-card{
+   font-size: 23px;
+   margin: 30px;
+
+}
+.btn-card {
+    align-self: flex-end;
+    margin: 30px;
+    text-align: center;
+    border: none;
+    background-color: #FFFFFF;
+    height: 40px;
+    width: 120px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 19px;
+    text-decoration: none; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: black; 
+}
+.menu-theme-card-container {
+    position: fixed; 
+    top: 70px; 
+    width: 235px;
+    left: 50px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3); 
+    z-index: 1000; 
+    padding: 10px ; 
+}
+.menu-level-card-container{
+    position: fixed; 
+    top: 70px; 
+    width: 235px;
+    left: 312px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3); 
+    z-index: 1000; 
+    padding: 10px ; 
+}
+.menu-theme-card-container ul,
+.menu-level-card-container ul {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.menu-theme-card-container li,
+.menu-level-card-container li {
+    padding: 10px 20px; 
+}
+
+.menu-theme-card-container li a,
+.menu-level-card-container li a {
+    text-decoration: none; 
+    color: #333; 
+}
+.menu-theme-card-container li:hover,
+.menu-level-card-container li:hover {
+    background-color: #f0f0f0; 
+    cursor: pointer; 
+}
+.menu-theme-card,
+.menu-level-card{
+    color: grey;
+    padding-left: 20px;
+}
+nav li.show {
+    display: block; 
+    padding-left: 10px;
+}
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Скрываем лишние карточки */
+}
+
+.card-container {
+    display: flex; 
+    transition: transform 0.6s ease; 
+    margin-top: 80px;
+}
+.arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.left-arrow {
+    position: absolute;
+    left: 10px;
+}
+
+.right-arrow {
+    position: absolute;
+    right: 10px;
+}
+
+.card {
+    background-color: #F4EEFF;
+    width: 300px; /* Ширина карточки */
+    height: 430px; /* Высота карточки */
+    border: 1px solid #494545; /* Граница карточки */
+    border-radius: 15px; /* Закругленные углы */
+    margin: 10px; /* Отступы между карточками */
+    display: flex; /* Используем flexbox для внутреннего расположения */
+    flex-direction: column; /* Располагаем элементы вертикально */
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    padding: 10px; /* Внутренние отступы */
+}
+
+.card-img {
+    margin-top: 10px;
+    width: 200px;
+    max-width: 700%; /* Ограничиваем ширину изображения */
+    max-height: 50%; /* Ограничиваем высоту изображения */
+    object-fit: cover; /* Обеспечиваем правильное соотношение сторон */
+}
+
+.card p {
+    margin-top: 150px; /* Отступ сверху для текста */
+    text-align: center; /* Центрируем текст */
+}
+.cardPage{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F3EDED;
+}
+h1{
+text-align: center;
+}
+.headerCardPage{
+        background: linear-gradient(to right,#390AF2, #8F02B6);
+        color: #ffffff;
+        height: 85px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 40px;
+        padding-right: 40px;
+        z-index: 1000;
+}
+.card-text-container {
+    background-color: white; /* Белый фон */
+    border: 2px solid #ccc; /* Рамка */
+    border-radius: 15px; /* Закругленные углы */
+    padding: 12px; /* Отступы внутри */
+    cursor: pointer; /* Курсор в виде руки */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-top: 130px; /* Отступ сверху */
+}
+
+.card-text-container p {
+    margin: 0; /* Убираем отступы у параграфа */
+    font-size: 1.2em; /* Размер текста */
+    color: #333; /* Цвет текста */
+}
+
+.hidden-text {
+    display: none; /* Скрытый текст */
+    margin-top: 130px; /* Отступ сверху */
+    font-weight: bold; /* Жирный шрифт */
+}
+.questions-container{
+    margin-left: 40px;
+}
+.checkBtn{
+    margin-left: 35px;
+    margin-top: 15px;
+    background-color: #7991fa;
+    color: white;
+    border-radius: 15px;
+    font-size: 18px;
+    border: none;
+    width: 300px;
+    height: 50px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Остается на месте */
+    z-index: 1; /* Сверху */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включает прокрутку, если необходимо */
+    background-color: rgba(87, 87, 87, 0.4); /* Черный фон с прозрачностью */
+}
+
+.modal-content {
+    background-color: #fff; /* Белый фон для содержимого */
+    margin: 15% auto; /* Центрирование по вертикали и горизонтали */
+    padding: 20px; /* Отступы внутри модального окна */
+    border: none;
+    border-radius: 35px;
+    width: 80%; /* Ширина модального окна */
+    max-width: 500px; /* Максимальная ширина */
+    border-radius: 5px; /* Закругленные углы */
+}
+
+.close {
+    color: #979797; /* Цвет для кнопки закрытия */
+    float: right; /* Выравнивание вправо */
+    font-size: 28px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Цвет при наведении */
+    text-decoration: none; /* Убираем подчеркивание */
+    cursor: pointer; /* Курсор в виде указателя */
+}
+.goTestcss{
+    width: 170px;
+    height: 48px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(to right,#390AF2, #8F02B6);
+    color: white;
+    cursor: pointer;
+}
+
+.choiceWord-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.choiceWord {
+    width: 590px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    padding: 40px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.choiceWord.correct {
+    background-color: green;
+    color: white;
+}
+.english-cards, .russian-cards {
+    text-align: center; /* Центрируем текст внутри контейнеров */
+    margin: 0 20px; /* Добавляем отступы между контейнерами */
+}
+.h2{
+    text-align: center; 
+    width: 100%; 
+        
+}
+.choiceWord.incorrect {
+    background-color: red;
+    color: white;
+}
+.choiceWord.dark-gray {
+    background-color: #767676; 
+    color: white; 
+}

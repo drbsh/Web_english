@@ -18,7 +18,7 @@ try {
 // Проверка, была ли отправлена форма
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
-    $password = $_POST['password']; // Не хешируем, но помните о безопасности
+    $password = $_POST['password']; // Пароль, введенный пользователем
 
     // Подготовка и выполнение SQL-запроса
     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Получаем пользователя
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Сравниваем пароли напрямую
-        if ($password === $user['password']) { // Без хеширования
+        // Сравниваем пароли с использованием password_verify
+        if (password_verify($password, $user['password'])) { // Используем хеширование
             // Успешный вход
             $_SESSION['user_id'] = $user['id']; // Сохраняем ID пользователя в сессии
             header("Location: index.php"); // Перенаправление на главную страницу

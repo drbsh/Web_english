@@ -1,5 +1,5 @@
 <?php
-session_start(); // Начать сессию
+session_start(); 
 ?>
 
 <!DOCTYPE html>
@@ -46,10 +46,10 @@ session_start(); // Начать сессию
         <nav>
             <ul>
                 <p class="menu-text">Занятия</p>
-                <li><a href="#">Карточки</a></li>
-                <li><a href="#">Выбор слов</a></li>
-                <li><a href="#">Заучивание</a></li>
-                <li><a href="#">Тест</a></li>
+                <li><a href="card.html">Карточки</a></li>
+                <li><a href="choiceWord.html">Выбор слов</a></li>
+                <li><a href="learnWord.html">Заучивание</a></li>
+                <li><a href="test.html">Тест</a></li>
                 <p class="menu-text">О нас</p>
                 <li><a href="https://t.me/drbshh">Telegram</a></li>
                 <li><a href="#">Vk</a></li>
@@ -76,28 +76,30 @@ session_start(); // Начать сессию
                 <img class="enBook-img" src="Image/english_book.png">
             </div>
             <div class="buttonGoDiv">
-                <button class="buttonGo" onclick="toggleContent()"> Начать </button>
+            <form action="check_session.php" method="POST">
+                    <button type="submit" class="buttonGo" style="cursor: pointer;"> Начать </button>
+                </form>
             </div>
         </div>
         <div class="page" id="page2">
             <h1 class="text-second-page"> Как вы собираетесь учить?</h1>
             <div class="scroll-container" id="scrollContainer">
-                <div class="item1">
+            <a href="test.html" class="item1">
                     <p class="examText">Тесты</p>
                     <img class="examPng" src="Image/exam.png">
-                </div>
-                <div class="item2">
+                </a>
+                <a href="choiceWord.html" class="item2" >
                     <p class="cardText">Выбор слов</p>
                     <img class="cardImg" src="Image/card.jpg">
-                </div>
-                <div class="item3">
+                </a>
+                <a href="learnWord.html" class="item3">
                     <p class="learnText">Заучивание</p>
                     <img class="learnImg" src="Image/learn.png">
-                </div>
-                <div class="item4">
+                </a>
+                <a href="card.html" class="item4">
                     <p class="cardText2">Карточки</p>
                     <img class="cardImg2" src="Image/shark2.jpg">
-                </div>    
+                </a>  
             </div>
         </div>
         <div class="page" id="page3">
@@ -117,7 +119,7 @@ session_start(); // Начать сессию
                 новые горизонты!</p>
             </div>
             <div class="testButton-container">
-                <button class="testButton" onclick="toggleContent()">Пройти тестирование!</button> 
+                <button class="testButton" onclick="testBtn()">Пройти тестирование!</button> 
             </div>
         </div>
     </div>

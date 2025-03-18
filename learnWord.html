@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <link rel="stylesheet" type="text/css" href="code/card.css">
+    <script src="code2.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="theme-card-container"> 
+         <button id="theme-card" class="theme-card">Тема карточек
+        <img id="strelkaImgCard" class="strelkaImgCard" src="Image/strelka.svg" alt="" width="30" height="30" style="cursor: pointer;">
+        <i class="fas fa-search search-icon"></i>
+    </button>
+        <button id="level-card" class="level-card">Уровень 
+            <img id="strelkaImgCard" src="Image/strelka.svg" alt="" width="30" height="30" style="cursor: pointer;">
+            <i class="fas fa-search search-icon"></i>
+        </button>
+    </div>
+    <div class="close-btn-container">
+        <img class="close-btn" id="close-btn" src="Image/closeCardPage.svg" onclick="closeBtn()">
+        </div>
+</header>
+<div id="menu-theme-card-container" class="menu-theme-card-container" style="display: none;">
+    <nav>
+        <ul>
+            <p class="menu-theme-card">Темы</p>
+            <li><a href="card.php?type=animal_card">Животные</a></li>
+            <li><a href="card.php?type=fruit_card">Фрукты</a></li>
+            <li><a href="card.php?type=veg_card">Овощи</a></li>
+            <li><a href="card.php?type=food_card">Продукты</a></li>
+            <li><a href="card.php?type=furn_card">Мебель</a></li>
+            <li><a href="card.php?type=cloth_card">Одежда</a></li>
+        </ul>
+    </nav>
+</div>
+<div id="menu-level-card-container" class="menu-level-card-container" style="display: none;">
+    <nav>
+        <ul>
+            <p class="menu-level-card">Уровень английского</p>
+            <li><a href="#">A1</a></li>
+            <li><a href="#">A2</a></li>
+            <li><a href="#">B1</a></li>
+            <li><a href="#">B2</a></li>
+            <li><a href="#">C1</a></li>
+            <li><a href="#">C2</a></li>
+        </ul>
+    </nav>
+</div>
+    <div class="container">
+    <div class="item1-2">
+    <div class="item1">
+        <p class="animal-card">Животные</p>
+        <a href="card.php?type=animal_card" class="btn-card">Начать!</a>
+    </div>
+    <div class="item2">
+        <p class="fruit-card">Фрукты</p>
+        <a href="card.php?type=fruit_card" class="btn-card">Начать!</a>
+    </div>
+</div>
+<div class="item3-4">
+    <div class="item3">
+        <p class="veg-card">Овощи</p>
+        <a href="card.php?type=vegetable_card" class="btn-card">Начать!</a>
+    </div>
+    <div class="item4">
+        <p class="food-card">Продукты</p>
+        <a href="card.php?type=food_card" class="btn-card">Начать!</a>
+    </div>
+</div>
+<div class="item5-6">
+    <div class="item5">
+        <p class="furn-card">Мебель</p>
+        <a href="card.php?type=furn_card" class="btn-card">Начать!</a>
+    </div>
+    <div class="item6">
+        <p class="cloth-card">Одежда</p>
+        <a href="card.php?type=cloth_card" class="btn-card">Начать!</a>
+    </div>
+</div> 
+</div>
+</body>
+</html>
