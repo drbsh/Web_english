@@ -3,7 +3,6 @@
 function closeBtn() {
      window.location.href = 'index.html';
 }
-// Функция для отображения меню тем
 function dialogButton() {
     const menuContainer = document.getElementById('menu-theme-card-container');
     if (menuContainer) {
@@ -33,7 +32,6 @@ window.onclick = function(event) {
     }
 }
 
-// Привязываем функции к кнопкам
 const themeCardButton = document.getElementById('theme-card');
 const levelCardButton = document.getElementById('level-card');
 

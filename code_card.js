@@ -11,39 +11,56 @@ function moveSlide(direction) {
     const cards = document.querySelectorAll('.card');
     const totalCards = cards.length;
 
-    // Проверяем направление и обновляем индекс текущей карточки
+    
     if (direction === 1 && currentIndex < totalCards - 1) {
-        currentIndex++; // Перелистываем вправо
+        currentIndex++; 
     } else if (direction === -1 && currentIndex > 0) {
-        currentIndex--; // Перелистываем влево
+        currentIndex--; 
     }
 
-    // Сдвигаем карточки
-    const offset = -currentIndex * 300; // 300 - ширина карточки
+    
+    const offset = -currentIndex * 300; 
     cardContainer.style.transform = `translateX(${offset}px)`;
 
-    // Отключаем стрелочки, если достигли конца
+    
     document.querySelector('.left-arrow').disabled = currentIndex === 0;
     document.querySelector('.right-arrow').disabled = currentIndex === totalCards - 1;
 }
 
-// Инициализация состояния стрелочек при загрузке страницы
+
 window.onload = function() {
     const totalCards = document.querySelectorAll('.card').length;
-    document.querySelector('.left-arrow').disabled = true; // Отключаем левую стрелочку
-    document.querySelector('.right-arrow').disabled = totalCards <= 1; // Отключаем правую стрелочку, если карточек меньше 2
+    document.querySelector('.left-arrow').disabled = true; 
+    document.querySelector('.right-arrow').disabled = totalCards <= 1; 
 };
 
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggle-button');
+    const strelkaImg = document.getElementById('strelkaImg');
 
-// Инициализация состояния стрелочек при загрузке страницы
+    toggleButton.onclick = function() {
+        
+        if (strelkaImg.style.transform === 'rotate(180deg)') {
+            
+            strelkaImg.style.transform = 'rotate(0deg)';
+        } else {
+            
+            strelkaImg.style.transform = 'rotate(180deg)';
+        }
+        
+        strelkaImg.style.transition = 'transform 0.3s ease';
+    };
+});
+
+
 const totalCards = document.querySelectorAll('.card').length;
 const leftArrow = document.querySelector('.left-arrow');
 const rightArrow = document.querySelector('.right-arrow');
 
 if (leftArrow) {
-    leftArrow.disabled = true; // Отключаем левую стрелочку
+    leftArrow.disabled = true; 
 }
 if (rightArrow) {
-    rightArrow.disabled = totalCards <= 1; // Отключаем правую стрелочку, если карточек меньше 2
+    rightArrow.disabled = totalCards <= 1; 
 }
 

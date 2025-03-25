@@ -23,7 +23,6 @@ $table_names = [
     'furn_card' => 'furn_card',
     'cloth_card' => 'cloth_card',
 ];
-// Получаем тип карточек из URL
 $card_type = isset($_GET['type']) ? $_GET['type'] : 'animal_card';
 
 if (array_key_exists($card_type, $table_names)) {

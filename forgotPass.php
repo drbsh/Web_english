@@ -1,14 +1,12 @@
 <?php
-session_start(); // Начать сессию
+session_start(); 
 
-// Настройки подключения к базе данных
 $host = 'localhost';
 $dbname = 'web_english';
 $user = 'postgres';
 $password = 'drbsh';
 
 try {
-    // Подключение к базе данных
     $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
@@ -21,27 +19,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset_password'])) {
     $new_password = $_POST['new_password'];
     $confirm_password = $_POST['confirm_password'];
 
-    // Проверка, совпадают ли пароли
     if ($new_password !== $confirm_password) {
         $error = "Пароли не совпадают.";
     } else {
-        // Проверка, существует ли пользователь с таким логином
         $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
         $stmt->bindParam(':username', $username);
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
-            // Хеширование нового пароля перед сохранением
             $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
 
-            // Обновление пароля в базе данных
             $stmt = $pdo->prepare("UPDATE users SET password = :password WHERE username = :username");
             $stmt->bindParam(':username', $username);
             $stmt->bindParam(':password', $hashed_password);
             if ($stmt->execute()) {
-                // Успешное обновление пароля
-                $_SESSION['user_id'] = $username; // Сохраняем логин или ID пользователя в сессии
-                header("Location: index.php"); // Перенаправление на главную страницу
+                
+                $_SESSION['user_id'] = $username; 
+                header("Location: index.php"); 
                 exit();
             } else {
                 $error = "Ошибка при обновлении пароля. Попробуйте еще раз.";

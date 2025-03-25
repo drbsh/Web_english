@@ -4,21 +4,18 @@ ini_set('display_errors', 1);
 
 session_start();
 
-// Настройки подключения к базе данных
 $host = 'localhost';
 $dbname = 'web_english';
 $user = 'postgres';
 $password = 'drbsh';
 
 try {
-    // Подключение к базе данных PostgreSQL
     $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Ошибка подключения: " . $e->getMessage());
 }
 
-// Список таблиц и их псевдонимы для URL
 $table_names = [
     'prefixes' => 'prefixes',
     'past_tense' => 'past_tense',
@@ -28,22 +25,19 @@ $table_names = [
     'future_tense' => 'future_tense',
 ];
 
-// Получаем тип карточек из URL (например, ?type=prefixes)
 $card_type = isset($_GET['type']) ? $_GET['type'] : 'prefixes';
 
-// Проверяем, существует ли выбранный тип карточек в списке
 if (array_key_exists($card_type, $table_names)) {
     $table_name = $table_names[$card_type];
 } else {
-    // Если тип карточек не найден, используем таблицу prefixes по умолчанию
     $table_name = 'prefixes';
 }
 
-// Запрос к базе данных для получения данных из выбранной таблицы
 $stmt = $pdo->prepare("SELECT * FROM $table_name");
 $stmt->execute();
 $cards = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
 
 
 <!DOCTYPE html>
