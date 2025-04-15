@@ -103,13 +103,11 @@ $cards = $stmt->fetchAll(PDO::FETCH_ASSOC);
         modal.style.display = "block";
     });
 
-    // Функция для закрытия модального окна
     function closeModal() {
         const modal = document.getElementById('myModal');
         modal.style.display = "none";
     }
 
-    // Закрытие модального окна при клике вне его
     window.onclick = function(event) {
         const modal = document.getElementById('myModal');
         if (event.target == modal) {

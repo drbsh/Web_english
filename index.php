@@ -76,8 +76,8 @@ session_start();
                 <img class="enBook-img" src="Image/english_book.png">
             </div>
             <div class="buttonGoDiv">
-            <form action="check_session.php" method="POST">
-                    <button type="submit" class="buttonGo" style="cursor: pointer;"> Начать </button>
+            <form id="sessionForm" action="check_session.php" method="POST">
+                    <button type="submit" class="buttonGo" style="cursor: pointer;"  id="startButton" > Начать </button>
                 </form>
             </div>
         </div>
